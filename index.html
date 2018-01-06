@@ -159,20 +159,20 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-hexo搭建个人博客总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-hexo搭建个人博客总结 - 副本 (10)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/06/hexo搭建个人博客总结/">Hexo搭建个人博客总结</a>
+      <a class="article-title" href="/2018/01/07/hexo搭建个人博客总结 - 副本 (10)/">Hexo搭建个人博客总结</a>
     </h1>
   
 
         
-        <a href="/2018/01/06/hexo搭建个人博客总结/" class="archive-article-date">
-  	<time datetime="2018-01-06T11:49:01.707Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-06</time>
+        <a href="/2018/01/07/hexo搭建个人博客总结 - 副本 (10)/" class="archive-article-date">
+  	<time datetime="2018-01-06T16:44:06.184Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-07</time>
 </a>
         
       </header>
@@ -234,7 +234,7 @@ posts:
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/06/hexo搭建个人博客总结/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/01/07/hexo搭建个人博客总结 - 副本 (10)/">展开全文 >></a>
         </p>
       
 
@@ -264,6 +264,955 @@ posts:
 
 
   
+    <article id="post-hexo搭建个人博客总结 - 副本 (9)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/07/hexo搭建个人博客总结 - 副本 (9)/">Hexo搭建个人博客总结</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/07/hexo搭建个人博客总结 - 副本 (9)/" class="archive-article-date">
+  	<time datetime="2018-01-06T16:44:05.579Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功"><a href="#1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功" class="headerlink" title="1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功"></a>1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功</h3><pre><code>1) C:\Users\wangrui&gt;git --version
+输出: git version 2.15.1.windows.2
+2) C:\Users\wangrui&gt;node -v
+输出: v8.9.4
+3) C:\Users\wangrui&gt;npm -v
+输出: 5.6.0
+</code></pre><h3 id="2、在d盘右键打开git-Bash"><a href="#2、在d盘右键打开git-Bash" class="headerlink" title="2、在d盘右键打开git Bash"></a>2、在d盘右键打开git Bash</h3><pre><code>1）$ npm install hexo-cli -g
+2）$ hexo init Myblog
+3）$ cd Myblog
+4）$ npm install
+5）$ hexo server
+然后在浏览器中输入http://localhost:4000/出现hexo页面代表安装成功
+</code></pre><h3 id="3、在d盘下进入-Myblog目录下右键git-Bash执行如下命令下载主题"><a href="#3、在d盘下进入-Myblog目录下右键git-Bash执行如下命令下载主题" class="headerlink" title="3、在d盘下进入/Myblog目录下右键git Bash执行如下命令下载主题"></a>3、在d盘下进入/Myblog目录下右键git Bash执行如下命令下载主题</h3><pre><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
+下载完成后将在Myblog/themes目录下出现文件夹yilia模板
+</code></pre><h3 id="4、更改hexo的默认主题"><a href="#4、更改hexo的默认主题" class="headerlink" title="4、更改hexo的默认主题"></a>4、更改hexo的默认主题</h3><pre><code>更改主题
+修改Myblog/_config.yml中的theme部分为
+theme: yilia
+</code></pre><h3 id="5、安装hexo-deployer-git自动部署发布工具"><a href="#5、安装hexo-deployer-git自动部署发布工具" class="headerlink" title="5、安装hexo-deployer-git自动部署发布工具"></a>5、安装hexo-deployer-git自动部署发布工具</h3><pre><code>进入d:/Myblog目录下，右键git Bash:
+npm install hexo-deployer-git --save
+</code></pre><h3 id="6、发布到Github"><a href="#6、发布到Github" class="headerlink" title="6、发布到Github"></a>6、发布到Github</h3><pre><code>进入d:/Myblog目录下，右键git Bash
+输入如下命令：hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
+</code></pre><h3 id="7、写文章更新"><a href="#7、写文章更新" class="headerlink" title="7、写文章更新"></a>7、写文章更新</h3><pre><code>在目录D:\Myblog\source\_posts下编写markdown文件（.md）
+在D:\Myblog目录下执行hexo clean &amp;&amp; hexo g &amp;&amp; hexo d更新
+</code></pre><h3 id="8、注意（yilia主题需要安装如下）："><a href="#8、注意（yilia主题需要安装如下）：" class="headerlink" title="8、注意（yilia主题需要安装如下）："></a>8、注意（yilia主题需要安装如下）：</h3><pre><code>在d盘下进入/Myblog目录下：执行npm i hexo-generator-json-content --save
+并且修改Myblog/_config.yml，在其中添加如下配置
+jsonContent:
+meta: false
+pages: false
+posts:
+  title: true
+  date: true
+  path: true
+  text: false
+  raw: false
+  content: false
+  slug: false
+  updated: false
+  comments: false
+  link: false
+  permalink: false
+  excerpt: false
+  categories: false
+  tags: true
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/07/hexo搭建个人博客总结 - 副本 (9)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hexo搭建个人博客总结 - 副本 (8)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/07/hexo搭建个人博客总结 - 副本 (8)/">Hexo搭建个人博客总结</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/07/hexo搭建个人博客总结 - 副本 (8)/" class="archive-article-date">
+  	<time datetime="2018-01-06T16:44:04.856Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功"><a href="#1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功" class="headerlink" title="1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功"></a>1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功</h3><pre><code>1) C:\Users\wangrui&gt;git --version
+输出: git version 2.15.1.windows.2
+2) C:\Users\wangrui&gt;node -v
+输出: v8.9.4
+3) C:\Users\wangrui&gt;npm -v
+输出: 5.6.0
+</code></pre><h3 id="2、在d盘右键打开git-Bash"><a href="#2、在d盘右键打开git-Bash" class="headerlink" title="2、在d盘右键打开git Bash"></a>2、在d盘右键打开git Bash</h3><pre><code>1）$ npm install hexo-cli -g
+2）$ hexo init Myblog
+3）$ cd Myblog
+4）$ npm install
+5）$ hexo server
+然后在浏览器中输入http://localhost:4000/出现hexo页面代表安装成功
+</code></pre><h3 id="3、在d盘下进入-Myblog目录下右键git-Bash执行如下命令下载主题"><a href="#3、在d盘下进入-Myblog目录下右键git-Bash执行如下命令下载主题" class="headerlink" title="3、在d盘下进入/Myblog目录下右键git Bash执行如下命令下载主题"></a>3、在d盘下进入/Myblog目录下右键git Bash执行如下命令下载主题</h3><pre><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
+下载完成后将在Myblog/themes目录下出现文件夹yilia模板
+</code></pre><h3 id="4、更改hexo的默认主题"><a href="#4、更改hexo的默认主题" class="headerlink" title="4、更改hexo的默认主题"></a>4、更改hexo的默认主题</h3><pre><code>更改主题
+修改Myblog/_config.yml中的theme部分为
+theme: yilia
+</code></pre><h3 id="5、安装hexo-deployer-git自动部署发布工具"><a href="#5、安装hexo-deployer-git自动部署发布工具" class="headerlink" title="5、安装hexo-deployer-git自动部署发布工具"></a>5、安装hexo-deployer-git自动部署发布工具</h3><pre><code>进入d:/Myblog目录下，右键git Bash:
+npm install hexo-deployer-git --save
+</code></pre><h3 id="6、发布到Github"><a href="#6、发布到Github" class="headerlink" title="6、发布到Github"></a>6、发布到Github</h3><pre><code>进入d:/Myblog目录下，右键git Bash
+输入如下命令：hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
+</code></pre><h3 id="7、写文章更新"><a href="#7、写文章更新" class="headerlink" title="7、写文章更新"></a>7、写文章更新</h3><pre><code>在目录D:\Myblog\source\_posts下编写markdown文件（.md）
+在D:\Myblog目录下执行hexo clean &amp;&amp; hexo g &amp;&amp; hexo d更新
+</code></pre><h3 id="8、注意（yilia主题需要安装如下）："><a href="#8、注意（yilia主题需要安装如下）：" class="headerlink" title="8、注意（yilia主题需要安装如下）："></a>8、注意（yilia主题需要安装如下）：</h3><pre><code>在d盘下进入/Myblog目录下：执行npm i hexo-generator-json-content --save
+并且修改Myblog/_config.yml，在其中添加如下配置
+jsonContent:
+meta: false
+pages: false
+posts:
+  title: true
+  date: true
+  path: true
+  text: false
+  raw: false
+  content: false
+  slug: false
+  updated: false
+  comments: false
+  link: false
+  permalink: false
+  excerpt: false
+  categories: false
+  tags: true
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/07/hexo搭建个人博客总结 - 副本 (8)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hexo搭建个人博客总结 - 副本 (7)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/07/hexo搭建个人博客总结 - 副本 (7)/">Hexo搭建个人博客总结</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/07/hexo搭建个人博客总结 - 副本 (7)/" class="archive-article-date">
+  	<time datetime="2018-01-06T16:44:04.157Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功"><a href="#1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功" class="headerlink" title="1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功"></a>1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功</h3><pre><code>1) C:\Users\wangrui&gt;git --version
+输出: git version 2.15.1.windows.2
+2) C:\Users\wangrui&gt;node -v
+输出: v8.9.4
+3) C:\Users\wangrui&gt;npm -v
+输出: 5.6.0
+</code></pre><h3 id="2、在d盘右键打开git-Bash"><a href="#2、在d盘右键打开git-Bash" class="headerlink" title="2、在d盘右键打开git Bash"></a>2、在d盘右键打开git Bash</h3><pre><code>1）$ npm install hexo-cli -g
+2）$ hexo init Myblog
+3）$ cd Myblog
+4）$ npm install
+5）$ hexo server
+然后在浏览器中输入http://localhost:4000/出现hexo页面代表安装成功
+</code></pre><h3 id="3、在d盘下进入-Myblog目录下右键git-Bash执行如下命令下载主题"><a href="#3、在d盘下进入-Myblog目录下右键git-Bash执行如下命令下载主题" class="headerlink" title="3、在d盘下进入/Myblog目录下右键git Bash执行如下命令下载主题"></a>3、在d盘下进入/Myblog目录下右键git Bash执行如下命令下载主题</h3><pre><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
+下载完成后将在Myblog/themes目录下出现文件夹yilia模板
+</code></pre><h3 id="4、更改hexo的默认主题"><a href="#4、更改hexo的默认主题" class="headerlink" title="4、更改hexo的默认主题"></a>4、更改hexo的默认主题</h3><pre><code>更改主题
+修改Myblog/_config.yml中的theme部分为
+theme: yilia
+</code></pre><h3 id="5、安装hexo-deployer-git自动部署发布工具"><a href="#5、安装hexo-deployer-git自动部署发布工具" class="headerlink" title="5、安装hexo-deployer-git自动部署发布工具"></a>5、安装hexo-deployer-git自动部署发布工具</h3><pre><code>进入d:/Myblog目录下，右键git Bash:
+npm install hexo-deployer-git --save
+</code></pre><h3 id="6、发布到Github"><a href="#6、发布到Github" class="headerlink" title="6、发布到Github"></a>6、发布到Github</h3><pre><code>进入d:/Myblog目录下，右键git Bash
+输入如下命令：hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
+</code></pre><h3 id="7、写文章更新"><a href="#7、写文章更新" class="headerlink" title="7、写文章更新"></a>7、写文章更新</h3><pre><code>在目录D:\Myblog\source\_posts下编写markdown文件（.md）
+在D:\Myblog目录下执行hexo clean &amp;&amp; hexo g &amp;&amp; hexo d更新
+</code></pre><h3 id="8、注意（yilia主题需要安装如下）："><a href="#8、注意（yilia主题需要安装如下）：" class="headerlink" title="8、注意（yilia主题需要安装如下）："></a>8、注意（yilia主题需要安装如下）：</h3><pre><code>在d盘下进入/Myblog目录下：执行npm i hexo-generator-json-content --save
+并且修改Myblog/_config.yml，在其中添加如下配置
+jsonContent:
+meta: false
+pages: false
+posts:
+  title: true
+  date: true
+  path: true
+  text: false
+  raw: false
+  content: false
+  slug: false
+  updated: false
+  comments: false
+  link: false
+  permalink: false
+  excerpt: false
+  categories: false
+  tags: true
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/07/hexo搭建个人博客总结 - 副本 (7)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hexo搭建个人博客总结 - 副本 (6)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/07/hexo搭建个人博客总结 - 副本 (6)/">Hexo搭建个人博客总结</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/07/hexo搭建个人博客总结 - 副本 (6)/" class="archive-article-date">
+  	<time datetime="2018-01-06T16:44:03.067Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功"><a href="#1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功" class="headerlink" title="1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功"></a>1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功</h3><pre><code>1) C:\Users\wangrui&gt;git --version
+输出: git version 2.15.1.windows.2
+2) C:\Users\wangrui&gt;node -v
+输出: v8.9.4
+3) C:\Users\wangrui&gt;npm -v
+输出: 5.6.0
+</code></pre><h3 id="2、在d盘右键打开git-Bash"><a href="#2、在d盘右键打开git-Bash" class="headerlink" title="2、在d盘右键打开git Bash"></a>2、在d盘右键打开git Bash</h3><pre><code>1）$ npm install hexo-cli -g
+2）$ hexo init Myblog
+3）$ cd Myblog
+4）$ npm install
+5）$ hexo server
+然后在浏览器中输入http://localhost:4000/出现hexo页面代表安装成功
+</code></pre><h3 id="3、在d盘下进入-Myblog目录下右键git-Bash执行如下命令下载主题"><a href="#3、在d盘下进入-Myblog目录下右键git-Bash执行如下命令下载主题" class="headerlink" title="3、在d盘下进入/Myblog目录下右键git Bash执行如下命令下载主题"></a>3、在d盘下进入/Myblog目录下右键git Bash执行如下命令下载主题</h3><pre><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
+下载完成后将在Myblog/themes目录下出现文件夹yilia模板
+</code></pre><h3 id="4、更改hexo的默认主题"><a href="#4、更改hexo的默认主题" class="headerlink" title="4、更改hexo的默认主题"></a>4、更改hexo的默认主题</h3><pre><code>更改主题
+修改Myblog/_config.yml中的theme部分为
+theme: yilia
+</code></pre><h3 id="5、安装hexo-deployer-git自动部署发布工具"><a href="#5、安装hexo-deployer-git自动部署发布工具" class="headerlink" title="5、安装hexo-deployer-git自动部署发布工具"></a>5、安装hexo-deployer-git自动部署发布工具</h3><pre><code>进入d:/Myblog目录下，右键git Bash:
+npm install hexo-deployer-git --save
+</code></pre><h3 id="6、发布到Github"><a href="#6、发布到Github" class="headerlink" title="6、发布到Github"></a>6、发布到Github</h3><pre><code>进入d:/Myblog目录下，右键git Bash
+输入如下命令：hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
+</code></pre><h3 id="7、写文章更新"><a href="#7、写文章更新" class="headerlink" title="7、写文章更新"></a>7、写文章更新</h3><pre><code>在目录D:\Myblog\source\_posts下编写markdown文件（.md）
+在D:\Myblog目录下执行hexo clean &amp;&amp; hexo g &amp;&amp; hexo d更新
+</code></pre><h3 id="8、注意（yilia主题需要安装如下）："><a href="#8、注意（yilia主题需要安装如下）：" class="headerlink" title="8、注意（yilia主题需要安装如下）："></a>8、注意（yilia主题需要安装如下）：</h3><pre><code>在d盘下进入/Myblog目录下：执行npm i hexo-generator-json-content --save
+并且修改Myblog/_config.yml，在其中添加如下配置
+jsonContent:
+meta: false
+pages: false
+posts:
+  title: true
+  date: true
+  path: true
+  text: false
+  raw: false
+  content: false
+  slug: false
+  updated: false
+  comments: false
+  link: false
+  permalink: false
+  excerpt: false
+  categories: false
+  tags: true
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/07/hexo搭建个人博客总结 - 副本 (6)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hexo搭建个人博客总结 - 副本 (5)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/07/hexo搭建个人博客总结 - 副本 (5)/">Hexo搭建个人博客总结</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/07/hexo搭建个人博客总结 - 副本 (5)/" class="archive-article-date">
+  	<time datetime="2018-01-06T16:44:02.809Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功"><a href="#1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功" class="headerlink" title="1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功"></a>1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功</h3><pre><code>1) C:\Users\wangrui&gt;git --version
+输出: git version 2.15.1.windows.2
+2) C:\Users\wangrui&gt;node -v
+输出: v8.9.4
+3) C:\Users\wangrui&gt;npm -v
+输出: 5.6.0
+</code></pre><h3 id="2、在d盘右键打开git-Bash"><a href="#2、在d盘右键打开git-Bash" class="headerlink" title="2、在d盘右键打开git Bash"></a>2、在d盘右键打开git Bash</h3><pre><code>1）$ npm install hexo-cli -g
+2）$ hexo init Myblog
+3）$ cd Myblog
+4）$ npm install
+5）$ hexo server
+然后在浏览器中输入http://localhost:4000/出现hexo页面代表安装成功
+</code></pre><h3 id="3、在d盘下进入-Myblog目录下右键git-Bash执行如下命令下载主题"><a href="#3、在d盘下进入-Myblog目录下右键git-Bash执行如下命令下载主题" class="headerlink" title="3、在d盘下进入/Myblog目录下右键git Bash执行如下命令下载主题"></a>3、在d盘下进入/Myblog目录下右键git Bash执行如下命令下载主题</h3><pre><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
+下载完成后将在Myblog/themes目录下出现文件夹yilia模板
+</code></pre><h3 id="4、更改hexo的默认主题"><a href="#4、更改hexo的默认主题" class="headerlink" title="4、更改hexo的默认主题"></a>4、更改hexo的默认主题</h3><pre><code>更改主题
+修改Myblog/_config.yml中的theme部分为
+theme: yilia
+</code></pre><h3 id="5、安装hexo-deployer-git自动部署发布工具"><a href="#5、安装hexo-deployer-git自动部署发布工具" class="headerlink" title="5、安装hexo-deployer-git自动部署发布工具"></a>5、安装hexo-deployer-git自动部署发布工具</h3><pre><code>进入d:/Myblog目录下，右键git Bash:
+npm install hexo-deployer-git --save
+</code></pre><h3 id="6、发布到Github"><a href="#6、发布到Github" class="headerlink" title="6、发布到Github"></a>6、发布到Github</h3><pre><code>进入d:/Myblog目录下，右键git Bash
+输入如下命令：hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
+</code></pre><h3 id="7、写文章更新"><a href="#7、写文章更新" class="headerlink" title="7、写文章更新"></a>7、写文章更新</h3><pre><code>在目录D:\Myblog\source\_posts下编写markdown文件（.md）
+在D:\Myblog目录下执行hexo clean &amp;&amp; hexo g &amp;&amp; hexo d更新
+</code></pre><h3 id="8、注意（yilia主题需要安装如下）："><a href="#8、注意（yilia主题需要安装如下）：" class="headerlink" title="8、注意（yilia主题需要安装如下）："></a>8、注意（yilia主题需要安装如下）：</h3><pre><code>在d盘下进入/Myblog目录下：执行npm i hexo-generator-json-content --save
+并且修改Myblog/_config.yml，在其中添加如下配置
+jsonContent:
+meta: false
+pages: false
+posts:
+  title: true
+  date: true
+  path: true
+  text: false
+  raw: false
+  content: false
+  slug: false
+  updated: false
+  comments: false
+  link: false
+  permalink: false
+  excerpt: false
+  categories: false
+  tags: true
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/07/hexo搭建个人博客总结 - 副本 (5)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hexo搭建个人博客总结 - 副本 (4)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/07/hexo搭建个人博客总结 - 副本 (4)/">Hexo搭建个人博客总结</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/07/hexo搭建个人博客总结 - 副本 (4)/" class="archive-article-date">
+  	<time datetime="2018-01-06T16:44:02.559Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功"><a href="#1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功" class="headerlink" title="1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功"></a>1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功</h3><pre><code>1) C:\Users\wangrui&gt;git --version
+输出: git version 2.15.1.windows.2
+2) C:\Users\wangrui&gt;node -v
+输出: v8.9.4
+3) C:\Users\wangrui&gt;npm -v
+输出: 5.6.0
+</code></pre><h3 id="2、在d盘右键打开git-Bash"><a href="#2、在d盘右键打开git-Bash" class="headerlink" title="2、在d盘右键打开git Bash"></a>2、在d盘右键打开git Bash</h3><pre><code>1）$ npm install hexo-cli -g
+2）$ hexo init Myblog
+3）$ cd Myblog
+4）$ npm install
+5）$ hexo server
+然后在浏览器中输入http://localhost:4000/出现hexo页面代表安装成功
+</code></pre><h3 id="3、在d盘下进入-Myblog目录下右键git-Bash执行如下命令下载主题"><a href="#3、在d盘下进入-Myblog目录下右键git-Bash执行如下命令下载主题" class="headerlink" title="3、在d盘下进入/Myblog目录下右键git Bash执行如下命令下载主题"></a>3、在d盘下进入/Myblog目录下右键git Bash执行如下命令下载主题</h3><pre><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
+下载完成后将在Myblog/themes目录下出现文件夹yilia模板
+</code></pre><h3 id="4、更改hexo的默认主题"><a href="#4、更改hexo的默认主题" class="headerlink" title="4、更改hexo的默认主题"></a>4、更改hexo的默认主题</h3><pre><code>更改主题
+修改Myblog/_config.yml中的theme部分为
+theme: yilia
+</code></pre><h3 id="5、安装hexo-deployer-git自动部署发布工具"><a href="#5、安装hexo-deployer-git自动部署发布工具" class="headerlink" title="5、安装hexo-deployer-git自动部署发布工具"></a>5、安装hexo-deployer-git自动部署发布工具</h3><pre><code>进入d:/Myblog目录下，右键git Bash:
+npm install hexo-deployer-git --save
+</code></pre><h3 id="6、发布到Github"><a href="#6、发布到Github" class="headerlink" title="6、发布到Github"></a>6、发布到Github</h3><pre><code>进入d:/Myblog目录下，右键git Bash
+输入如下命令：hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
+</code></pre><h3 id="7、写文章更新"><a href="#7、写文章更新" class="headerlink" title="7、写文章更新"></a>7、写文章更新</h3><pre><code>在目录D:\Myblog\source\_posts下编写markdown文件（.md）
+在D:\Myblog目录下执行hexo clean &amp;&amp; hexo g &amp;&amp; hexo d更新
+</code></pre><h3 id="8、注意（yilia主题需要安装如下）："><a href="#8、注意（yilia主题需要安装如下）：" class="headerlink" title="8、注意（yilia主题需要安装如下）："></a>8、注意（yilia主题需要安装如下）：</h3><pre><code>在d盘下进入/Myblog目录下：执行npm i hexo-generator-json-content --save
+并且修改Myblog/_config.yml，在其中添加如下配置
+jsonContent:
+meta: false
+pages: false
+posts:
+  title: true
+  date: true
+  path: true
+  text: false
+  raw: false
+  content: false
+  slug: false
+  updated: false
+  comments: false
+  link: false
+  permalink: false
+  excerpt: false
+  categories: false
+  tags: true
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/07/hexo搭建个人博客总结 - 副本 (4)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hexo搭建个人博客总结 - 副本 (3)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/07/hexo搭建个人博客总结 - 副本 (3)/">Hexo搭建个人博客总结</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/07/hexo搭建个人博客总结 - 副本 (3)/" class="archive-article-date">
+  	<time datetime="2018-01-06T16:44:02.401Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功"><a href="#1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功" class="headerlink" title="1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功"></a>1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功</h3><pre><code>1) C:\Users\wangrui&gt;git --version
+输出: git version 2.15.1.windows.2
+2) C:\Users\wangrui&gt;node -v
+输出: v8.9.4
+3) C:\Users\wangrui&gt;npm -v
+输出: 5.6.0
+</code></pre><h3 id="2、在d盘右键打开git-Bash"><a href="#2、在d盘右键打开git-Bash" class="headerlink" title="2、在d盘右键打开git Bash"></a>2、在d盘右键打开git Bash</h3><pre><code>1）$ npm install hexo-cli -g
+2）$ hexo init Myblog
+3）$ cd Myblog
+4）$ npm install
+5）$ hexo server
+然后在浏览器中输入http://localhost:4000/出现hexo页面代表安装成功
+</code></pre><h3 id="3、在d盘下进入-Myblog目录下右键git-Bash执行如下命令下载主题"><a href="#3、在d盘下进入-Myblog目录下右键git-Bash执行如下命令下载主题" class="headerlink" title="3、在d盘下进入/Myblog目录下右键git Bash执行如下命令下载主题"></a>3、在d盘下进入/Myblog目录下右键git Bash执行如下命令下载主题</h3><pre><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
+下载完成后将在Myblog/themes目录下出现文件夹yilia模板
+</code></pre><h3 id="4、更改hexo的默认主题"><a href="#4、更改hexo的默认主题" class="headerlink" title="4、更改hexo的默认主题"></a>4、更改hexo的默认主题</h3><pre><code>更改主题
+修改Myblog/_config.yml中的theme部分为
+theme: yilia
+</code></pre><h3 id="5、安装hexo-deployer-git自动部署发布工具"><a href="#5、安装hexo-deployer-git自动部署发布工具" class="headerlink" title="5、安装hexo-deployer-git自动部署发布工具"></a>5、安装hexo-deployer-git自动部署发布工具</h3><pre><code>进入d:/Myblog目录下，右键git Bash:
+npm install hexo-deployer-git --save
+</code></pre><h3 id="6、发布到Github"><a href="#6、发布到Github" class="headerlink" title="6、发布到Github"></a>6、发布到Github</h3><pre><code>进入d:/Myblog目录下，右键git Bash
+输入如下命令：hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
+</code></pre><h3 id="7、写文章更新"><a href="#7、写文章更新" class="headerlink" title="7、写文章更新"></a>7、写文章更新</h3><pre><code>在目录D:\Myblog\source\_posts下编写markdown文件（.md）
+在D:\Myblog目录下执行hexo clean &amp;&amp; hexo g &amp;&amp; hexo d更新
+</code></pre><h3 id="8、注意（yilia主题需要安装如下）："><a href="#8、注意（yilia主题需要安装如下）：" class="headerlink" title="8、注意（yilia主题需要安装如下）："></a>8、注意（yilia主题需要安装如下）：</h3><pre><code>在d盘下进入/Myblog目录下：执行npm i hexo-generator-json-content --save
+并且修改Myblog/_config.yml，在其中添加如下配置
+jsonContent:
+meta: false
+pages: false
+posts:
+  title: true
+  date: true
+  path: true
+  text: false
+  raw: false
+  content: false
+  slug: false
+  updated: false
+  comments: false
+  link: false
+  permalink: false
+  excerpt: false
+  categories: false
+  tags: true
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/07/hexo搭建个人博客总结 - 副本 (3)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hexo搭建个人博客总结 - 副本 (2)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/07/hexo搭建个人博客总结 - 副本 (2)/">Hexo搭建个人博客总结</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/07/hexo搭建个人博客总结 - 副本 (2)/" class="archive-article-date">
+  	<time datetime="2018-01-06T16:44:02.085Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功"><a href="#1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功" class="headerlink" title="1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功"></a>1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功</h3><pre><code>1) C:\Users\wangrui&gt;git --version
+输出: git version 2.15.1.windows.2
+2) C:\Users\wangrui&gt;node -v
+输出: v8.9.4
+3) C:\Users\wangrui&gt;npm -v
+输出: 5.6.0
+</code></pre><h3 id="2、在d盘右键打开git-Bash"><a href="#2、在d盘右键打开git-Bash" class="headerlink" title="2、在d盘右键打开git Bash"></a>2、在d盘右键打开git Bash</h3><pre><code>1）$ npm install hexo-cli -g
+2）$ hexo init Myblog
+3）$ cd Myblog
+4）$ npm install
+5）$ hexo server
+然后在浏览器中输入http://localhost:4000/出现hexo页面代表安装成功
+</code></pre><h3 id="3、在d盘下进入-Myblog目录下右键git-Bash执行如下命令下载主题"><a href="#3、在d盘下进入-Myblog目录下右键git-Bash执行如下命令下载主题" class="headerlink" title="3、在d盘下进入/Myblog目录下右键git Bash执行如下命令下载主题"></a>3、在d盘下进入/Myblog目录下右键git Bash执行如下命令下载主题</h3><pre><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
+下载完成后将在Myblog/themes目录下出现文件夹yilia模板
+</code></pre><h3 id="4、更改hexo的默认主题"><a href="#4、更改hexo的默认主题" class="headerlink" title="4、更改hexo的默认主题"></a>4、更改hexo的默认主题</h3><pre><code>更改主题
+修改Myblog/_config.yml中的theme部分为
+theme: yilia
+</code></pre><h3 id="5、安装hexo-deployer-git自动部署发布工具"><a href="#5、安装hexo-deployer-git自动部署发布工具" class="headerlink" title="5、安装hexo-deployer-git自动部署发布工具"></a>5、安装hexo-deployer-git自动部署发布工具</h3><pre><code>进入d:/Myblog目录下，右键git Bash:
+npm install hexo-deployer-git --save
+</code></pre><h3 id="6、发布到Github"><a href="#6、发布到Github" class="headerlink" title="6、发布到Github"></a>6、发布到Github</h3><pre><code>进入d:/Myblog目录下，右键git Bash
+输入如下命令：hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
+</code></pre><h3 id="7、写文章更新"><a href="#7、写文章更新" class="headerlink" title="7、写文章更新"></a>7、写文章更新</h3><pre><code>在目录D:\Myblog\source\_posts下编写markdown文件（.md）
+在D:\Myblog目录下执行hexo clean &amp;&amp; hexo g &amp;&amp; hexo d更新
+</code></pre><h3 id="8、注意（yilia主题需要安装如下）："><a href="#8、注意（yilia主题需要安装如下）：" class="headerlink" title="8、注意（yilia主题需要安装如下）："></a>8、注意（yilia主题需要安装如下）：</h3><pre><code>在d盘下进入/Myblog目录下：执行npm i hexo-generator-json-content --save
+并且修改Myblog/_config.yml，在其中添加如下配置
+jsonContent:
+meta: false
+pages: false
+posts:
+  title: true
+  date: true
+  path: true
+  text: false
+  raw: false
+  content: false
+  slug: false
+  updated: false
+  comments: false
+  link: false
+  permalink: false
+  excerpt: false
+  categories: false
+  tags: true
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/07/hexo搭建个人博客总结 - 副本 (2)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hexo搭建个人博客总结 - 副本" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/07/hexo搭建个人博客总结 - 副本/">Hexo搭建个人博客总结</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/07/hexo搭建个人博客总结 - 副本/" class="archive-article-date">
+  	<time datetime="2018-01-06T16:44:01.571Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功"><a href="#1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功" class="headerlink" title="1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功"></a>1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功</h3><pre><code>1) C:\Users\wangrui&gt;git --version
+输出: git version 2.15.1.windows.2
+2) C:\Users\wangrui&gt;node -v
+输出: v8.9.4
+3) C:\Users\wangrui&gt;npm -v
+输出: 5.6.0
+</code></pre><h3 id="2、在d盘右键打开git-Bash"><a href="#2、在d盘右键打开git-Bash" class="headerlink" title="2、在d盘右键打开git Bash"></a>2、在d盘右键打开git Bash</h3><pre><code>1）$ npm install hexo-cli -g
+2）$ hexo init Myblog
+3）$ cd Myblog
+4）$ npm install
+5）$ hexo server
+然后在浏览器中输入http://localhost:4000/出现hexo页面代表安装成功
+</code></pre><h3 id="3、在d盘下进入-Myblog目录下右键git-Bash执行如下命令下载主题"><a href="#3、在d盘下进入-Myblog目录下右键git-Bash执行如下命令下载主题" class="headerlink" title="3、在d盘下进入/Myblog目录下右键git Bash执行如下命令下载主题"></a>3、在d盘下进入/Myblog目录下右键git Bash执行如下命令下载主题</h3><pre><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
+下载完成后将在Myblog/themes目录下出现文件夹yilia模板
+</code></pre><h3 id="4、更改hexo的默认主题"><a href="#4、更改hexo的默认主题" class="headerlink" title="4、更改hexo的默认主题"></a>4、更改hexo的默认主题</h3><pre><code>更改主题
+修改Myblog/_config.yml中的theme部分为
+theme: yilia
+</code></pre><h3 id="5、安装hexo-deployer-git自动部署发布工具"><a href="#5、安装hexo-deployer-git自动部署发布工具" class="headerlink" title="5、安装hexo-deployer-git自动部署发布工具"></a>5、安装hexo-deployer-git自动部署发布工具</h3><pre><code>进入d:/Myblog目录下，右键git Bash:
+npm install hexo-deployer-git --save
+</code></pre><h3 id="6、发布到Github"><a href="#6、发布到Github" class="headerlink" title="6、发布到Github"></a>6、发布到Github</h3><pre><code>进入d:/Myblog目录下，右键git Bash
+输入如下命令：hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
+</code></pre><h3 id="7、写文章更新"><a href="#7、写文章更新" class="headerlink" title="7、写文章更新"></a>7、写文章更新</h3><pre><code>在目录D:\Myblog\source\_posts下编写markdown文件（.md）
+在D:\Myblog目录下执行hexo clean &amp;&amp; hexo g &amp;&amp; hexo d更新
+</code></pre><h3 id="8、注意（yilia主题需要安装如下）："><a href="#8、注意（yilia主题需要安装如下）：" class="headerlink" title="8、注意（yilia主题需要安装如下）："></a>8、注意（yilia主题需要安装如下）：</h3><pre><code>在d盘下进入/Myblog目录下：执行npm i hexo-generator-json-content --save
+并且修改Myblog/_config.yml，在其中添加如下配置
+jsonContent:
+meta: false
+pages: false
+posts:
+  title: true
+  date: true
+  path: true
+  text: false
+  raw: false
+  content: false
+  slug: false
+  updated: false
+  comments: false
+  link: false
+  permalink: false
+  excerpt: false
+  categories: false
+  tags: true
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/07/hexo搭建个人博客总结 - 副本/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 

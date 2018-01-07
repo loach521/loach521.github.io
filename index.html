@@ -44,7 +44,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/assets/img/hehua.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Loach</a></h1>
@@ -94,7 +94,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/assets/img/hehua.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">Loach</h1>
@@ -140,6 +140,111 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-springboot/springboot总结一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/07/springboot/springboot总结一/">springboot总结一</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/07/springboot/springboot总结一/" class="archive-article-date">
+  	<time datetime="2018-01-07T03:56:30.817Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功"><a href="#1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功" class="headerlink" title="1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功"></a>1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功</h3><pre><code>1) C:\Users\wangrui&gt;git --version
+输出: git version 2.15.1.windows.2
+2) C:\Users\wangrui&gt;node -v
+输出: v8.9.4
+3) C:\Users\wangrui&gt;npm -v
+输出: 5.6.0
+</code></pre><h3 id="2、在d盘右键打开git-Bash"><a href="#2、在d盘右键打开git-Bash" class="headerlink" title="2、在d盘右键打开git Bash"></a>2、在d盘右键打开git Bash</h3><pre><code>1）$ npm install hexo-cli -g
+2）$ hexo init Myblog
+3）$ cd Myblog
+4）$ npm install
+5）$ hexo server
+然后在浏览器中输入http://localhost:4000/出现hexo页面代表安装成功
+</code></pre><h3 id="3、在d盘下进入-Myblog目录下右键git-Bash执行如下命令下载主题"><a href="#3、在d盘下进入-Myblog目录下右键git-Bash执行如下命令下载主题" class="headerlink" title="3、在d盘下进入/Myblog目录下右键git Bash执行如下命令下载主题"></a>3、在d盘下进入/Myblog目录下右键git Bash执行如下命令下载主题</h3><pre><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
+下载完成后将在Myblog/themes目录下出现文件夹yilia模板
+</code></pre><h3 id="4、更改hexo的默认主题"><a href="#4、更改hexo的默认主题" class="headerlink" title="4、更改hexo的默认主题"></a>4、更改hexo的默认主题</h3><pre><code>更改主题
+修改Myblog/_config.yml中的theme部分为
+theme: yilia
+</code></pre><h3 id="5、安装hexo-deployer-git自动部署发布工具"><a href="#5、安装hexo-deployer-git自动部署发布工具" class="headerlink" title="5、安装hexo-deployer-git自动部署发布工具"></a>5、安装hexo-deployer-git自动部署发布工具</h3><pre><code>进入d:/Myblog目录下，右键git Bash:
+npm install hexo-deployer-git --save
+</code></pre><h3 id="6、发布到Github"><a href="#6、发布到Github" class="headerlink" title="6、发布到Github"></a>6、发布到Github</h3><pre><code>进入d:/Myblog目录下，右键git Bash
+输入如下命令：hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
+</code></pre><h3 id="7、写文章更新"><a href="#7、写文章更新" class="headerlink" title="7、写文章更新"></a>7、写文章更新</h3><pre><code>在目录D:\Myblog\source\_posts下编写markdown文件（.md）
+在D:\Myblog目录下执行hexo clean &amp;&amp; hexo g &amp;&amp; hexo d更新
+</code></pre><h3 id="8、注意（yilia主题需要安装如下）："><a href="#8、注意（yilia主题需要安装如下）：" class="headerlink" title="8、注意（yilia主题需要安装如下）："></a>8、注意（yilia主题需要安装如下）：</h3><pre><code>在d盘下进入/Myblog目录下：执行npm i hexo-generator-json-content --save
+并且修改Myblog/_config.yml，在其中添加如下配置
+jsonContent:
+meta: false
+pages: false
+posts:
+  title: true
+  date: true
+  path: true
+  text: false
+  raw: false
+  content: false
+  slug: false
+  updated: false
+  comments: false
+  link: false
+  permalink: false
+  excerpt: false
+  categories: false
+  tags: true
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/07/springboot/springboot总结一/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-hexo搭建个人博客总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">

@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://loach521.github.io">
-  <title>解决用Hexo和GitHub搭建博客时hexo d命令报错问题 | Loach的博客</title>
+  <title>tree命令的使用 | Loach的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用hexo deploy自动部署到github page的时候出现了错误：fatal: HttpRequestException encountered.    An error occurred while sending the request. bash: /dev/tty: No such device or address error: failed to execute prompt">
+  <meta name="description" content="1、显示项目树状结构tree /f 2、导出生成的文件目录tree /f &amp;gt; tree.txt">
 <meta name="keywords" content="后端,java,spring,python,c,opencv,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解决用Hexo和GitHub搭建博客时hexo d命令报错问题">
-<meta property="og:url" content="https://loach521.github.io/2018/04/06/解决用Hexo和GitHub搭建博客时hexo d命令报错问题/index.html">
+<meta property="og:title" content="tree命令的使用">
+<meta property="og:url" content="https://loach521.github.io/2018/04/06/win7下tree命令的相关使用/index.html">
 <meta property="og:site_name" content="Loach的博客">
-<meta property="og:description" content="使用hexo deploy自动部署到github page的时候出现了错误：fatal: HttpRequestException encountered.    An error occurred while sending the request. bash: /dev/tty: No such device or address error: failed to execute prompt">
+<meta property="og:description" content="1、显示项目树状结构tree /f 2、导出生成的文件目录tree /f &amp;gt; tree.txt">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-06T01:43:51.732Z">
+<meta property="og:updated_time" content="2018-04-06T06:14:52.771Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="解决用Hexo和GitHub搭建博客时hexo d命令报错问题">
-<meta name="twitter:description" content="使用hexo deploy自动部署到github page的时候出现了错误：fatal: HttpRequestException encountered.    An error occurred while sending the request. bash: /dev/tty: No such device or address error: failed to execute prompt">
+<meta name="twitter:title" content="tree命令的使用">
+<meta name="twitter:description" content="1、显示项目树状结构tree /f 2、导出生成的文件目录tree /f &amp;gt; tree.txt">
   
   
     <link rel="icon" href="/favicon.png">
@@ -135,98 +135,28 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-解决用Hexo和GitHub搭建博客时hexo d命令报错问题" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-win7下tree命令的相关使用" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      解决用Hexo和GitHub搭建博客时hexo d命令报错问题
+      tree命令的使用
     </h1>
   
 
         
-        <a href="/2018/04/06/解决用Hexo和GitHub搭建博客时hexo d命令报错问题/" class="archive-article-date">
-  	<time datetime="2018-04-06T01:20:51.222Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-06</time>
+        <a href="/2018/04/06/win7下tree命令的相关使用/" class="archive-article-date">
+  	<time datetime="2018-04-06T06:12:28.359Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="使用hexo-deploy自动部署到github-page的时候出现了错误："><a href="#使用hexo-deploy自动部署到github-page的时候出现了错误：" class="headerlink" title="使用hexo deploy自动部署到github page的时候出现了错误："></a>使用hexo deploy自动部署到github page的时候出现了错误：</h3><pre><code>fatal: HttpRequestException encountered.
-   An error occurred while sending the request.
-bash: /dev/tty: No such device or address
-error: failed to execute prompt script (exit code 1)
-fatal: could not read Username for &apos;https://github.com&apos;: No error
-FATAL Something&apos;s wrong. Maybe you can find the solution here: http://hexo.io/do                                                                                                                                                 cs/troubleshooting.html
-Error: fatal: HttpRequestException encountered.
-   An error occurred while sending the request.
-bash: /dev/tty: No such device or address
-error: failed to execute prompt script (exit code 1)
-fatal: could not read Username for &apos;https://github.com&apos;: No error
-
-at ChildProcess.&lt;anonymous&gt; (D:\Myblog\node_modules\hexo-util\lib\spawn.js:3                                                                                                                                                 7:17)
-at emitTwo (events.js:126:13)
-at ChildProcess.emit (events.js:214:7)
-at ChildProcess.cp.emit (D:\Myblog\node_modules\cross-spawn\lib\enoent.js:40                                                                                                                                                 :29)
-at maybeClose (internal/child_process.js:925:16)
-at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
-</code></pre><h3 id="在服务器上部署一点问题都没有，但是在本地部署是就一直报这个错误。最后把-config-yml中的git仓库链接改成了ssh链接，然后又给git账户增加了ssh-key才解决了问题。"><a href="#在服务器上部署一点问题都没有，但是在本地部署是就一直报这个错误。最后把-config-yml中的git仓库链接改成了ssh链接，然后又给git账户增加了ssh-key才解决了问题。" class="headerlink" title="在服务器上部署一点问题都没有，但是在本地部署是就一直报这个错误。最后把_config.yml中的git仓库链接改成了ssh链接，然后又给git账户增加了ssh key才解决了问题。"></a>在服务器上部署一点问题都没有，但是在本地部署是就一直报这个错误。最后把_config.yml中的git仓库链接改成了ssh链接，然后又给git账户增加了ssh key才解决了问题。</h3><h3 id="具体方法如下："><a href="#具体方法如下：" class="headerlink" title="具体方法如下："></a>具体方法如下：</h3><h3 id="1、hexo配置"><a href="#1、hexo配置" class="headerlink" title="1、hexo配置"></a>1、hexo配置</h3><p>要使用自动部署首先要安装hexo-deployer-git工具：</p>
-<pre><code>npm install hexo-deployer-git --save
-</code></pre><p>配置_config.yml中的deploy：</p>
-<pre><code>deploy:
-  type: git
- repo:git@github.com:your_github_user_name/your_github_user_name.github.io.git
-  branch: master
-</code></pre><p>注意：这里的repo需要设置成你git仓库的ssh链接</p>
-<h3 id="2、生成-ssh-key"><a href="#2、生成-ssh-key" class="headerlink" title="2、生成 ssh key"></a>2、生成 ssh key</h3><p>命令行中输入：</p>
-<pre><code>$ ssh-keygen -t rsa -C greenovia@qq.com（换成你的邮箱地址）
-</code></pre><p>如下：</p>
-<pre><code>wangrui@wangrui-PC MINGW64 /d/Myblog
-$ ssh-keygen -t rsa -C wangr19900909@163.com
-Generating public/private rsa key pair.
-Enter file in which to save the key (/c/Users/wangrui/.ssh/id_rsa):
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-Your identification has been saved in /c/Users/wangrui/.ssh/id_rsa.
-Your public key has been saved in /c/Users/wangrui/.ssh/id_rsa.pub.
-The key fingerprint is:
-SHA256:ynAGe9HlEpUEGqwBvk4hX66V3MfKv6Wyk9pC3Svo5h8 wangr19900909@163.com
-The key&apos;s randomart image is:
-+---[RSA 2048]----+
-|  .. .. o++.     |
-| .  . .+ +.      |
-|. o ooo o .      |
-| o *.= o .       |
-|  + B.=.S        |
-| o o.B.+.        |
-|  o. .E. ..      |
-|    +.=o.o       |
-|   ++++=+.       |
-+----[SHA256]-----+
-</code></pre><p>这样在 /c/Users/wangrui/.ssh/id_rsa文件中就生成了公钥</p>
-<h3 id="3、配置github账户的ssh-key"><a href="#3、配置github账户的ssh-key" class="headerlink" title="3、配置github账户的ssh key"></a>3、配置github账户的ssh key</h3><p>打开id_rsa.pub文件将一整串公钥拷贝下来</p>
-<p>进入你的github账户设置（个人中心—settings），在ssh and GPG keys中新增一个ssh key</p>
-<p>验证ssh key：</p>
-<pre><code>$ ssh -T git@github.com
-Warning: Permanently added the RSA host key for IP address &apos;13.250.177.xxx&apos; to the list of known hosts.
-Hi loach521! You&apos;ve successfully authenticated, but GitHub does not provide shell access.
-</code></pre><h3 id="4、初始化本地git仓库"><a href="#4、初始化本地git仓库" class="headerlink" title="4、初始化本地git仓库"></a>4、初始化本地git仓库</h3><p>设置Git的user name和email：</p>
-<pre><code>wangrui@wangrui-PC MINGW64 /d/Myblog
-$ git config --global user.name &quot;loach521&quot;
-wangrui@wangrui-PC MINGW64 /d/Myblog
-$ git config --global user.email &quot;wangr19900909@163.com&quot;
-</code></pre><p>在本地的hexo init生成的文件夹中初始化git仓库：</p>
-<pre><code>wangrui@wangrui-PC MINGW64 /d/Myblog
-$ git init
-Initialized empty Git repository in D:/Myblog/.git/
-</code></pre><p>将本地仓库和远程仓库连接</p>
-<pre><code>wangrui@wangrui-PC MINGW64 /d/Myblog (master)
-$ git remote add origin git@github.com:loach521/loach521.github.io
-</code></pre><h3 id="5、做完以上这些步骤，说明你的仓库可以使用ssh方式来上传下载代码，而不需要输入用户名和密码了"><a href="#5、做完以上这些步骤，说明你的仓库可以使用ssh方式来上传下载代码，而不需要输入用户名和密码了" class="headerlink" title="5、做完以上这些步骤，说明你的仓库可以使用ssh方式来上传下载代码，而不需要输入用户名和密码了"></a>5、做完以上这些步骤，说明你的仓库可以使用ssh方式来上传下载代码，而不需要输入用户名和密码了</h3><h3 id="6、写文章更新"><a href="#6、写文章更新" class="headerlink" title="6、写文章更新"></a>6、写文章更新</h3><pre><code>在目录D:\Myblog\source\_posts下编写markdown文件（.md）
-在D:\Myblog目录下执行hexo clean &amp;&amp; hexo g &amp;&amp; hexo d更新
+        <h3 id="1、显示项目树状结构"><a href="#1、显示项目树状结构" class="headerlink" title="1、显示项目树状结构"></a>1、显示项目树状结构</h3><pre><code>tree /f
+</code></pre><h3 id="2、导出生成的文件目录"><a href="#2、导出生成的文件目录" class="headerlink" title="2、导出生成的文件目录"></a>2、导出生成的文件目录</h3><pre><code>tree /f &gt; tree.txt
 </code></pre>
       
 
@@ -316,7 +246,7 @@ $ git remote add origin git@github.com:loach521/loach521.github.io
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://loach521.github.io/2018/04/06/解决用Hexo和GitHub搭建博客时hexo d命令报错问题/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://loach521.github.io/2018/04/06/win7下tree命令的相关使用/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -330,18 +260,9 @@ $ git remote add origin git@github.com:loach521/loach521.github.io
   
 <nav id="article-nav">
   
-    <a href="/2018/04/06/maven使用总结/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          maven使用总结
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/01/06/hexo搭建个人博客总结/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hexo搭建个人博客总结</div>
+    <a href="/2018/04/06/maven使用总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">maven使用总结</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -368,7 +289,7 @@ $ git remote add origin git@github.com:loach521/loach521.github.io
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用hexo-deploy自动部署到github-page的时候出现了错误："><span class="toc-number">1.</span> <span class="toc-text">使用hexo deploy自动部署到github page的时候出现了错误：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在服务器上部署一点问题都没有，但是在本地部署是就一直报这个错误。最后把-config-yml中的git仓库链接改成了ssh链接，然后又给git账户增加了ssh-key才解决了问题。"><span class="toc-number">2.</span> <span class="toc-text">在服务器上部署一点问题都没有，但是在本地部署是就一直报这个错误。最后把_config.yml中的git仓库链接改成了ssh链接，然后又给git账户增加了ssh key才解决了问题。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#具体方法如下："><span class="toc-number">3.</span> <span class="toc-text">具体方法如下：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1、hexo配置"><span class="toc-number">4.</span> <span class="toc-text">1、hexo配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、生成-ssh-key"><span class="toc-number">5.</span> <span class="toc-text">2、生成 ssh key</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、配置github账户的ssh-key"><span class="toc-number">6.</span> <span class="toc-text">3、配置github账户的ssh key</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、初始化本地git仓库"><span class="toc-number">7.</span> <span class="toc-text">4、初始化本地git仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、做完以上这些步骤，说明你的仓库可以使用ssh方式来上传下载代码，而不需要输入用户名和密码了"><span class="toc-number">8.</span> <span class="toc-text">5、做完以上这些步骤，说明你的仓库可以使用ssh方式来上传下载代码，而不需要输入用户名和密码了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、写文章更新"><span class="toc-number">9.</span> <span class="toc-text">6、写文章更新</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、显示项目树状结构"><span class="toc-number">1.</span> <span class="toc-text">1、显示项目树状结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、导出生成的文件目录"><span class="toc-number">2.</span> <span class="toc-text">2、导出生成的文件目录</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -382,7 +303,7 @@ $ git remote add origin git@github.com:loach521/loach521.github.io
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="解决用Hexo和GitHub搭建博客时hexo d命令报错问题" data-title="解决用Hexo和GitHub搭建博客时hexo d命令报错问题" data-url="https://loach521.github.io/2018/04/06/解决用Hexo和GitHub搭建博客时hexo d命令报错问题/"></div>
+	<div class="ds-thread" data-thread-key="win7下tree命令的相关使用" data-title="tree命令的使用" data-url="https://loach521.github.io/2018/04/06/win7下tree命令的相关使用/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -405,8 +326,8 @@ $ git remote add origin git@github.com:loach521/loach521.github.io
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "https://loach521.github.io/2018/04/06/解决用Hexo和GitHub搭建博客时hexo d命令报错问题/", 
-    sourceId: "解决用Hexo和GitHub搭建博客时hexo d命令报错问题",
+    url: "https://loach521.github.io/2018/04/06/win7下tree命令的相关使用/", 
+    sourceId: "win7下tree命令的相关使用",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
@@ -415,7 +336,7 @@ $ git remote add origin git@github.com:loach521/loach521.github.io
   
 
   
-  <div id="SOHUCS" sid="解决用Hexo和GitHub搭建博客时hexo d命令报错问题" ></div> 
+  <div id="SOHUCS" sid="win7下tree命令的相关使用" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({

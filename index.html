@@ -136,6 +136,157 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-win7下tree命令的相关使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/06/win7下tree命令的相关使用/">tree命令的使用</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/06/win7下tree命令的相关使用/" class="archive-article-date">
+  	<time datetime="2018-04-06T06:12:28.359Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、显示项目树状结构"><a href="#1、显示项目树状结构" class="headerlink" title="1、显示项目树状结构"></a>1、显示项目树状结构</h3><pre><code>tree /f
+</code></pre><h3 id="2、导出生成的文件目录"><a href="#2、导出生成的文件目录" class="headerlink" title="2、导出生成的文件目录"></a>2、导出生成的文件目录</h3><pre><code>tree /f &gt; tree.txt
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/06/win7下tree命令的相关使用/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-maven使用总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/06/maven使用总结/">maven使用总结</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/06/maven使用总结/" class="archive-article-date">
+  	<time datetime="2018-04-06T01:45:55.194Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###maven介绍与环境搭建<br>maven是基于项目对象模型（POM），可以通过一小段描述信息来管理项目的构建、报告和文档的软件项目管理工具。</p>
+<p>###1、maven下载解压说明<br>进入maven.apache.org/download页面，下载apache-maven-3.5.3-bin.zip，解压后有四个文件夹</p>
+<pre><code>bin/:包含maven 的运行脚本
+    --m2.conf
+    --mvn
+    --mvn.cmd
+    --mvnDebug
+    --mvnDebug.cmd
+    --mvnyjp
+boot:/类加载库
+    --plexus-classworlds-2.5.2.jar
+conf/:配置文件
+    --logging/
+        --simplelogger.properties
+    --settings.xml
+    --toolchains.xml
+lib/:相关类库
+</code></pre><p>###2、maven系统环境变量配置<br>新建系统变量</p>
+<pre><code>变量名：M2_HOME
+变量值：D:\apache-maven-3.5.0
+</code></pre><p>添加到系统PATH，编辑PATH：</p>
+<pre><code>在原来的PATH后添加
+;%M2_HOME%\bin
+</code></pre><p>###3、验证<br>    C:\Users\wangrui&gt;mvn -v<br>    Apache Maven 3.5.0 (ff8f5e7444045639af65f6095c62210b5713f426; 2017-04-04T03:39:0<br>    6+08:00)<br>    Maven home: D:\apache-maven-3.5.0\bin..<br>    Java version: 1.8.0_152, vendor: Oracle Corporation<br>    Java home: C:\Program Files\Java\jre1.8.0_152<br>    Default locale: zh_CN, platform encoding: GBK<br>    OS name: “windows 7”, version: “6.1”, arch: “amd64”, family: “windows”</p>
+<p>###4、maven项目目录结构<br>    src<br>        -main<br>            -java<br>                -package<br>        -test<br>            -java<br>                -package<br>        -resources</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/06/maven使用总结/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-解决用Hexo和GitHub搭建博客时hexo d命令报错问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

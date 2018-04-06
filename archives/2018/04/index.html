@@ -6,13 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://loach521.github.io">
-  <title>Loach的博客</title>
+  <title>Archives: 2018/4 | Loach的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="java/python/c">
 <meta name="keywords" content="后端,java,spring,python,c,opencv,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Loach的博客">
-<meta property="og:url" content="https://loach521.github.io/index.html">
+<meta property="og:url" content="https://loach521.github.io/archives/2018/04/index.html">
 <meta property="og:site_name" content="Loach的博客">
 <meta property="og:description" content="java/python/c">
 <meta property="og:locale" content="zh-CN">
@@ -136,246 +136,47 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-解决用Hexo和GitHub搭建博客时hexo d命令报错问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/06/解决用Hexo和GitHub搭建博客时hexo d命令报错问题/">解决用Hexo和GitHub搭建博客时hexo d命令报错问题</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/06/解决用Hexo和GitHub搭建博客时hexo d命令报错问题/" class="archive-article-date">
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/04/06/解决用Hexo和GitHub搭建博客时hexo d命令报错问题/" class="archive-article-date">
   	<time datetime="2018-04-06T01:20:51.222Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-06</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="使用hexo-deploy自动部署到github-page的时候出现了错误："><a href="#使用hexo-deploy自动部署到github-page的时候出现了错误：" class="headerlink" title="使用hexo deploy自动部署到github page的时候出现了错误："></a>使用hexo deploy自动部署到github page的时候出现了错误：</h3><pre><code>fatal: HttpRequestException encountered.
-   An error occurred while sending the request.
-bash: /dev/tty: No such device or address
-error: failed to execute prompt script (exit code 1)
-fatal: could not read Username for &apos;https://github.com&apos;: No error
-FATAL Something&apos;s wrong. Maybe you can find the solution here: http://hexo.io/do                                                                                                                                                 cs/troubleshooting.html
-Error: fatal: HttpRequestException encountered.
-   An error occurred while sending the request.
-bash: /dev/tty: No such device or address
-error: failed to execute prompt script (exit code 1)
-fatal: could not read Username for &apos;https://github.com&apos;: No error
-
-at ChildProcess.&lt;anonymous&gt; (D:\Myblog\node_modules\hexo-util\lib\spawn.js:3                                                                                                                                                 7:17)
-at emitTwo (events.js:126:13)
-at ChildProcess.emit (events.js:214:7)
-at ChildProcess.cp.emit (D:\Myblog\node_modules\cross-spawn\lib\enoent.js:40                                                                                                                                                 :29)
-at maybeClose (internal/child_process.js:925:16)
-at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
-</code></pre><h3 id="在服务器上部署一点问题都没有，但是在本地部署是就一直报这个错误。最后把-config-yml中的git仓库链接改成了ssh链接，然后又给git账户增加了ssh-key才解决了问题。"><a href="#在服务器上部署一点问题都没有，但是在本地部署是就一直报这个错误。最后把-config-yml中的git仓库链接改成了ssh链接，然后又给git账户增加了ssh-key才解决了问题。" class="headerlink" title="在服务器上部署一点问题都没有，但是在本地部署是就一直报这个错误。最后把_config.yml中的git仓库链接改成了ssh链接，然后又给git账户增加了ssh key才解决了问题。"></a>在服务器上部署一点问题都没有，但是在本地部署是就一直报这个错误。最后把_config.yml中的git仓库链接改成了ssh链接，然后又给git账户增加了ssh key才解决了问题。</h3><h3 id="具体方法如下："><a href="#具体方法如下：" class="headerlink" title="具体方法如下："></a>具体方法如下：</h3><h3 id="1、hexo配置"><a href="#1、hexo配置" class="headerlink" title="1、hexo配置"></a>1、hexo配置</h3><p>要使用自动部署首先要安装hexo-deployer-git工具：</p>
-<pre><code>npm install hexo-deployer-git --save
-</code></pre><p>配置_config.yml中的deploy：</p>
-<pre><code>deploy:
-  type: git
- repo:git@github.com:your_github_user_name/your_github_user_name.github.io.git
-  branch: master
-</code></pre><p>注意：这里的repo需要设置成你git仓库的ssh链接</p>
-<h3 id="2、生成-ssh-key"><a href="#2、生成-ssh-key" class="headerlink" title="2、生成 ssh key"></a>2、生成 ssh key</h3><p>命令行中输入：</p>
-<pre><code>$ ssh-keygen -t rsa -C greenovia@qq.com（换成你的邮箱地址）
-</code></pre><p>如下：</p>
-<pre><code>wangrui@wangrui-PC MINGW64 /d/Myblog
-$ ssh-keygen -t rsa -C wangr19900909@163.com
-Generating public/private rsa key pair.
-Enter file in which to save the key (/c/Users/wangrui/.ssh/id_rsa):
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-Your identification has been saved in /c/Users/wangrui/.ssh/id_rsa.
-Your public key has been saved in /c/Users/wangrui/.ssh/id_rsa.pub.
-The key fingerprint is:
-SHA256:ynAGe9HlEpUEGqwBvk4hX66V3MfKv6Wyk9pC3Svo5h8 wangr19900909@163.com
-The key&apos;s randomart image is:
-+---[RSA 2048]----+
-|  .. .. o++.     |
-| .  . .+ +.      |
-|. o ooo o .      |
-| o *.= o .       |
-|  + B.=.S        |
-| o o.B.+.        |
-|  o. .E. ..      |
-|    +.=o.o       |
-|   ++++=+.       |
-+----[SHA256]-----+
-</code></pre><p>这样在 /c/Users/wangrui/.ssh/id_rsa文件中就生成了公钥</p>
-<h3 id="3、配置github账户的ssh-key"><a href="#3、配置github账户的ssh-key" class="headerlink" title="3、配置github账户的ssh key"></a>3、配置github账户的ssh key</h3><p>打开id_rsa.pub文件将一整串公钥拷贝下来</p>
-<p>进入你的github账户设置（个人中心—settings），在ssh and GPG keys中新增一个ssh key</p>
-<p>验证ssh key：</p>
-<pre><code>$ ssh -T git@github.com
-Warning: Permanently added the RSA host key for IP address &apos;13.250.177.xxx&apos; to the list of known hosts.
-Hi loach521! You&apos;ve successfully authenticated, but GitHub does not provide shell access.
-</code></pre><h3 id="4、初始化本地git仓库"><a href="#4、初始化本地git仓库" class="headerlink" title="4、初始化本地git仓库"></a>4、初始化本地git仓库</h3><p>设置Git的user name和email：</p>
-<pre><code>wangrui@wangrui-PC MINGW64 /d/Myblog
-$ git config --global user.name &quot;loach521&quot;
-wangrui@wangrui-PC MINGW64 /d/Myblog
-$ git config --global user.email &quot;wangr19900909@163.com&quot;
-</code></pre><p>在本地的hexo init生成的文件夹中初始化git仓库：</p>
-<pre><code>wangrui@wangrui-PC MINGW64 /d/Myblog
-$ git init
-Initialized empty Git repository in D:/Myblog/.git/
-</code></pre><p>将本地仓库和远程仓库连接</p>
-<pre><code>wangrui@wangrui-PC MINGW64 /d/Myblog (master)
-$ git remote add origin git@github.com:loach521/loach521.github.io
-</code></pre><h3 id="5、做完以上这些步骤，说明你的仓库可以使用ssh方式来上传下载代码，而不需要输入用户名和密码了"><a href="#5、做完以上这些步骤，说明你的仓库可以使用ssh方式来上传下载代码，而不需要输入用户名和密码了" class="headerlink" title="5、做完以上这些步骤，说明你的仓库可以使用ssh方式来上传下载代码，而不需要输入用户名和密码了"></a>5、做完以上这些步骤，说明你的仓库可以使用ssh方式来上传下载代码，而不需要输入用户名和密码了</h3><h3 id="6、写文章更新"><a href="#6、写文章更新" class="headerlink" title="6、写文章更新"></a>6、写文章更新</h3><pre><code>在目录D:\Myblog\source\_posts下编写markdown文件（.md）
-在D:\Myblog目录下执行hexo clean &amp;&amp; hexo g &amp;&amp; hexo d更新
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/06/解决用Hexo和GitHub搭建博客时hexo d命令报错问题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hexo搭建个人博客总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/06/hexo搭建个人博客总结/">Hexo搭建个人博客总结</a>
+      <a class="archive-article-title" href="/2018/04/06/解决用Hexo和GitHub搭建博客时hexo d命令报错问题/">解决用Hexo和GitHub搭建博客时hexo d命令报错问题</a>
     </h1>
   
 
-        
-        <a href="/2018/01/06/hexo搭建个人博客总结/" class="archive-article-date">
-  	<time datetime="2018-01-06T11:49:01.707Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功"><a href="#1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功" class="headerlink" title="1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功"></a>1、下载nodejs和git，然后安装，安装成功后在命令行中验证是否安装成功</h3><pre><code>1) C:\Users\wangrui&gt;git --version
-输出: git version 2.15.1.windows.2
-2) C:\Users\wangrui&gt;node -v
-输出: v8.9.4
-3) C:\Users\wangrui&gt;npm -v
-输出: 5.6.0
-</code></pre><h3 id="2、在d盘右键打开git-Bash"><a href="#2、在d盘右键打开git-Bash" class="headerlink" title="2、在d盘右键打开git Bash"></a>2、在d盘右键打开git Bash</h3><pre><code>1）$ npm install hexo-cli -g
-2）$ hexo init Myblog
-3）$ cd Myblog
-4）$ npm install
-5）$ hexo server
-然后在浏览器中输入http://localhost:4000/出现hexo页面代表安装成功
-</code></pre><h3 id="3、在d盘下进入-Myblog目录下右键git-Bash执行如下命令下载主题"><a href="#3、在d盘下进入-Myblog目录下右键git-Bash执行如下命令下载主题" class="headerlink" title="3、在d盘下进入/Myblog目录下右键git Bash执行如下命令下载主题"></a>3、在d盘下进入/Myblog目录下右键git Bash执行如下命令下载主题</h3><pre><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
-下载完成后将在Myblog/themes目录下出现文件夹yilia模板
-</code></pre><h3 id="4、更改hexo的默认主题"><a href="#4、更改hexo的默认主题" class="headerlink" title="4、更改hexo的默认主题"></a>4、更改hexo的默认主题</h3><pre><code>更改主题
-修改Myblog/_config.yml中的theme部分为
-theme: yilia
-</code></pre><h3 id="5、安装hexo-deployer-git自动部署发布工具"><a href="#5、安装hexo-deployer-git自动部署发布工具" class="headerlink" title="5、安装hexo-deployer-git自动部署发布工具"></a>5、安装hexo-deployer-git自动部署发布工具</h3><pre><code>进入d:/Myblog目录下，右键git Bash:
-npm install hexo-deployer-git --save
-</code></pre><h3 id="6、发布到Github"><a href="#6、发布到Github" class="headerlink" title="6、发布到Github"></a>6、发布到Github</h3><pre><code>进入d:/Myblog目录下，右键git Bash
-输入如下命令：hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
-</code></pre><h3 id="7、写文章更新"><a href="#7、写文章更新" class="headerlink" title="7、写文章更新"></a>7、写文章更新</h3><pre><code>在目录D:\Myblog\source\_posts下编写markdown文件（.md）
-在D:\Myblog目录下执行hexo clean &amp;&amp; hexo g &amp;&amp; hexo d更新
-</code></pre><h3 id="8、注意（yilia主题需要安装如下）："><a href="#8、注意（yilia主题需要安装如下）：" class="headerlink" title="8、注意（yilia主题需要安装如下）："></a>8、注意（yilia主题需要安装如下）：</h3><pre><code>在d盘下进入/Myblog目录下：执行npm i hexo-generator-json-content --save
-并且修改Myblog/_config.yml，在其中添加如下配置
-jsonContent:
-meta: false
-pages: false
-posts:
-  title: true
-  date: true
-  path: true
-  text: false
-  raw: false
-  content: false
-  slug: false
-  updated: false
-  comments: false
-  link: false
-  permalink: false
-  excerpt: false
-  categories: false
-  tags: true
-</code></pre>
-      
+        <div class="article-info info-on-right">
+          
+          
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/06/hexo搭建个人博客总结/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
+    </div></section>
+  
+
+    
 
 
           </div>
@@ -397,9 +198,9 @@ posts:
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
-		isArchive: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

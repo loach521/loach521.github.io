@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Loach的博客">
 <meta property="og:description" content="###maven介绍与环境搭建maven是基于项目对象模型（POM），可以通过一小段描述信息来管理项目的构建、报告和文档的软件项目管理工具。 ###1、maven下载解压说明进入maven.apache.org/download页面，下载apache-maven-3.5.3-bin.zip，解压后有四个文件夹 bin/:包含maven 的运行脚本     --m2.conf     --mvn">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-06T02:56:07.148Z">
+<meta property="og:updated_time" content="2018-04-07T16:18:35.397Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="maven使用总结">
 <meta name="twitter:description" content="###maven介绍与环境搭建maven是基于项目对象模型（POM），可以通过一小段描述信息来管理项目的构建、报告和文档的软件项目管理工具。 ###1、maven下载解压说明进入maven.apache.org/download页面，下载apache-maven-3.5.3-bin.zip，解压后有四个文件夹 bin/:包含maven 的运行脚本     --m2.conf     --mvn">
@@ -180,7 +180,606 @@ lib/:相关类库
 ;%M2_HOME%\bin
 </code></pre><p>###3、验证<br>    C:\Users\wangrui&gt;mvn -v<br>    Apache Maven 3.5.0 (ff8f5e7444045639af65f6095c62210b5713f426; 2017-04-04T03:39:0<br>    6+08:00)<br>    Maven home: D:\apache-maven-3.5.0\bin..<br>    Java version: 1.8.0_152, vendor: Oracle Corporation<br>    Java home: C:\Program Files\Java\jre1.8.0_152<br>    Default locale: zh_CN, platform encoding: GBK<br>    OS name: “windows 7”, version: “6.1”, arch: “amd64”, family: “windows”</p>
 <p>###4、maven项目目录结构<br>    src<br>        -main<br>            -java<br>                -package<br>        -test<br>            -java<br>                -package<br>        -resources</p>
+<p>###5、maven项目的helloworld<br>目录结构</p>
+<pre><code>maven01
+├─pom.xml
+│
+├─src
+│  ├─main
+│  │  └─java
+│  │      └─com
+│  │          └─loach
+│  │              └─maven01
+│  │                  └─model
+│  │                          HelloWorld.java
+│  │
+│  └─test
+│      └─java
+│          └─com
+│              └─loach
+│                  └─maven01
+│                      └─model
+│                              HelloWorldTest.java
+│
+└─target
+    ├─classes
+    │  └─com
+    │      └─loach
+    │          └─maven01
+    │              └─model
+    │                      HelloWorld.class
+    │
+    ├─maven-status
+    │  └─maven-compiler-plugin
+    │      ├─compile
+    │      │  └─default-compile
+    │      │          createdFiles.lst
+    │      │          inputFiles.lst
+    │      │
+    │      └─testCompile
+    │          └─default-testCompile
+    │                  createdFiles.lst
+    │                  inputFiles.lst
+    │
+    ├─surefire-reports
+    │      com.loach.maven01.model.HelloWorldTest.txt
+    │      TEST-com.loach.maven01.model.HelloWorldTest.xml
+    │
+    └─test-classes
+        └─com
+            └─loach
+                └─maven01
+                    └─model
+                            HelloWorldTest.class
+</code></pre><p>上述目录结构中：</p>
+<p>源码文件HelloWorld.java</p>
+<pre><code>package com.loach.maven01.model;
 
+public class HelloWorld{
+    public String sayHello(){
+        return &quot;Hello World!&quot;;    
+    }    
+}
+</code></pre><p>测试文件HelloWorldTest.java</p>
+<pre><code>package com.loach.maven01.model;
+
+import org.junit.*;
+import org.junit.Assert.*;
+
+public class HelloWorldTest{
+    @Test
+    public void testHello(){
+        Assert.assertEquals(&quot;Hello World!&quot;,new HelloWorld().sayHello());
+        System.out.println(new HelloWorld().sayHello());
+    }
+}
+</code></pre><p>项目配置文件pom.xml</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0
+http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    &lt;!-- groupId的值为项目的包名 --&gt;
+    &lt;groupId&gt;com.loach.maven01&lt;/groupId&gt;
+    &lt;!-- artifactId的值为项目名称 --&gt;
+    &lt;artifactId&gt;maven01-model&lt;/artifactId&gt;
+    &lt;!-- version的值为项目版本 --&gt;
+    &lt;version&gt;0.0.1SNAPSHOT&lt;/version&gt;
+    &lt;!-- 添加junit依赖 --&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;junit&lt;/groupId&gt;
+            &lt;artifactId&gt;junit&lt;/artifactId&gt;
+            &lt;version&gt;4.10&lt;/version&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+&lt;/project&gt;
+</code></pre><p>###6、maven项目编译<br>在项目根目录下执行mvn compile将在项目根目录下省target目标文件夹；</p>
+<pre><code>[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding GBK, i.e. buil
+d is platform dependent!
+[INFO] Compiling 1 source file to D:\MavenTest\code\maven01\target\classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.726 s
+[INFO] Finished at: 2018-04-07T07:20:51+08:00
+[INFO] ------------------------------------------------------------------------
+</code></pre><p>###7、maven运行测试文件<br>在项目根目录下执行mvn test结果如下：</p>
+<pre><code>[INFO]
+[INFO] ------------------&lt; com.loach.maven01:maven01-model &gt;-------------------
+[INFO] Building maven01-model 0.0.1SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ maven01-mo
+del ---
+[WARNING] Using platform encoding (GBK actually) to copy filtered resources, i.e
+. build is platform dependent!
+[INFO] skip non existing resourceDirectory D:\MavenTest\code\maven01\src\main\re
+sources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ maven01-model -
+--
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ ma
+ven01-model ---
+[WARNING] Using platform encoding (GBK actually) to copy filtered resources, i.e
+. build is platform dependent!
+[INFO] skip non existing resourceDirectory D:\MavenTest\code\maven01\src\test\re
+sources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ maven01
+-model ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding GBK, i.e. buil
+d is platform dependent!
+[INFO] Compiling 1 source file to D:\MavenTest\code\maven01\target\test-classes
+[INFO]
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ maven01-model ---
+[INFO] Surefire report directory: D:\MavenTest\code\maven01\target\surefire-repo
+rts
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.loach.maven01.model.HelloWorldTest
+Hello World!
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.056 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.410 s
+[INFO] Finished at: 2018-04-07T07:32:42+08:00
+[INFO] ------------------------------------------------------------------------
+</code></pre><p>###8、maven项目打包<br>在项目根目录下执行mvn package将在项目的根目录下的target目录下生成jar包文件maven01-model-0.0.1SNAPSHOT.jar，该jar文件可以通过执行命令执行</p>
+<pre><code>java -jar maven01-model-0.0.1SNAPSHOT.jar
+</code></pre><p>###9、最终项目的整体目录结构如下：</p>
+<pre><code>maven01
+├─pom.xml
+│
+├─src
+│  ├─main
+│  │  └─java
+│  │      └─com
+│  │          └─loach
+│  │              └─maven01
+│  │                  └─model
+│  │                          HelloWorld.java
+│  │
+│  └─test
+│      └─java
+│          └─com
+│              └─loach
+│                  └─maven01
+│                      └─model
+│                              HelloWorldTest.java
+│
+└─target
+    │  maven01-model-0.0.1SNAPSHOT.jar
+    │
+    ├─classes
+    │  └─com
+    │      └─loach
+    │          └─maven01
+    │              └─model
+    │                      HelloWorld.class
+    │
+    ├─maven-archiver
+    │      pom.properties
+    │
+    ├─maven-status
+    │  └─maven-compiler-plugin
+    │      ├─compile
+    │      │  └─default-compile
+    │      │          createdFiles.lst
+    │      │          inputFiles.lst
+    │      │
+    │      └─testCompile
+    │          └─default-testCompile
+    │                  createdFiles.lst
+    │                  inputFiles.lst
+    │
+    ├─surefire-reports
+    │      com.loach.maven01.model.HelloWorldTest.txt
+    │      TEST-com.loach.maven01.model.HelloWorldTest.xml
+    │
+    └─test-classes
+        └─com
+            └─loach
+                └─maven01
+                    └─model
+                            HelloWorldTest.class
+</code></pre><p>###10、maven中的常用命令<br>    mvn -v        查看maven的版本信息<br>    mvn compile   编译<br>    mvn test      测试<br>    mvn package   打包<br>    mvn clean       删除target文件夹<br>    mvn install   安装jar包到本地仓库中</p>
+<p>###11、删除项目根目录下生成的target文件夹<br>执行mvn clean </p>
+<pre><code>D:\MavenTest\code\maven01&gt;mvn clean
+[INFO] Scanning for projects...
+[WARNING]
+[WARNING] Some problems were encountered while building the effective model for
+com.loach.maven01:maven01-model:jar:0.0.1SNAPSHOT
+[WARNING] &apos;version&apos; uses an unsupported snapshot version format, should be &apos;*-SN
+APSHOT&apos; instead. @ line 13, column 11
+[WARNING]
+[WARNING] It is highly recommended to fix these problems because they threaten t
+he stability of your build.
+[WARNING]
+[WARNING] For this reason, future Maven versions might no longer support buildin
+g such malformed projects.
+[WARNING]
+[INFO]
+[INFO] ------------------&lt; com.loach.maven01:maven01-model &gt;-------------------
+[INFO] Building maven01-model 0.0.1SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ maven01-model ---
+[INFO] Deleting D:\MavenTest\code\maven01\target
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 0.348 s
+[INFO] Finished at: 2018-04-07T09:19:17+08:00
+[INFO] ------------------------------------------------------------------------
+</code></pre><p>###12、安装项目jar包到本地仓库中<br>执行命令mvn install 将在本地仓库中生成相应的jar包，在本地仓库中生成的目录结构如下：<br>本地仓库为d:\MyMavenRepository</p>
+<pre><code>MyMavenRepository
+    ├─google
+    │  ├─code
+    │  │  └─findbugs
+    │  │      └─jsr305
+    │  │          └─2.0.1
+    │  │                  jsr305-2.0.1.jar
+    │  │                  jsr305-2.0.1.jar.sha1
+    │  │                  jsr305-2.0.1.pom
+    │  │                  jsr305-2.0.1.pom.sha1
+    │  │                  _remote.repositories
+    │  │
+    │  ├─collections
+    │  │  └─google-collections
+    │  │      └─1.0
+    │  │              google-collections-1.0.jar
+    │  │              google-collections-1.0.jar.sha1
+    │  │              google-collections-1.0.pom
+    │  │              google-collections-1.0.pom.sha1
+    │  │              _remote.repositories
+    │  │
+    │  └─google
+    │      └─1
+    │              google-1.pom
+    │              google-1.pom.sha1
+    │              _remote.repositories
+    │
+    └─loach
+        └─maven01
+            └─maven01-model
+                │  maven-metadata-local.xml
+                │
+                └─0.0.1SNAPSHOT
+                        maven-metadata-local.xml
+                        maven01-model-0.0.1SNAPSHOT.jar
+                        maven01-model-0.0.1SNAPSHOT.pom
+                        _remote.repositories
+</code></pre><p>###13、在新的项目中添加上述打包到本地仓库中的依赖，只需要在新的项目中的pom.xml中引入依赖</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;com.loach.maven01&lt;/groupId&gt;
+    &lt;artifactId&gt;maven01-model&lt;/artifactId&gt;
+    &lt;version&gt;0.0.1SNAPSHOT&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre><p>之后就可以在新的项目中引入maven01中的方法；</p>
+<p>###14、使用archetype插件创建符合maven规定的目录骨架<br>创建目录的两种方式</p>
+<pre><code>1、archetype:generate 按照提示进行选择
+2、archetype:generate -DgroupId=组织名（公司网站反写+项目名）
+                    -DartifactId=项目名-模块名
+                    -Dversion=版本号
+                    -Dpackage=代码所在的包名
+</code></pre><p>实例1：创建项目maven02(交互式方式)</p>
+<pre><code>1、创建文件夹maven02；
+2、进入该目录下，执行mvn archetype:generate
+3、进入如下交互
+    Choose a number or apply filter (format: [groupId:]artifactId, case sensitive co
+    ntains): 1162:（直接回车）
+    Choose org.apache.maven.archetypes:maven-archetype-quickstart version:
+    1: 1.0-alpha-1
+    2: 1.0-alpha-2
+    3: 1.0-alpha-3
+    4: 1.0-alpha-4
+    5: 1.0
+    6: 1.1
+    Choose a number: 6: 6
+    Define value for property &apos;groupId&apos;: com.loach.maven02  （设置groupId）
+    Define value for property &apos;artifactId&apos;: maven02-service  （设置artifactId）
+    Define value for property &apos;version&apos; 1.0-SNAPSHOT: : 1.0.0-SNAPSHOT  （设置version）
+    Define value for property &apos;package&apos; com.loach.maven02: : com.loach.maven02.service （设置package）
+4、创建成功：
+    Confirm properties configuration:
+    groupId: com.loach.maven02
+    artifactId: maven02-service
+    version: 1.0.0-SNAPSHOT
+    package: com.loach.maven02.service
+     Y: : y
+    [INFO] -------------------------------------------------------------------------
+    ---
+    [INFO] Using following parameters for creating project from Old (1.x) Archetype:
+     maven-archetype-quickstart:1.1
+    [INFO] -------------------------------------------------------------------------
+    ---
+    [INFO] Parameter: basedir, Value: D:\MavenTest\code\maven02
+    [INFO] Parameter: package, Value: com.loach.maven02.service
+    [INFO] Parameter: groupId, Value: com.loach.maven02
+    [INFO] Parameter: artifactId, Value: maven02-service
+    [INFO] Parameter: packageName, Value: com.loach.maven02.service
+    [INFO] Parameter: version, Value: 1.0.0-SNAPSHOT
+    [INFO] project created from Old (1.x) Archetype in dir: D:\MavenTest\code\maven0
+    2\maven02-service
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD SUCCESS
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Total time: 08:15 min
+    [INFO] Finished at: 2018-04-07T10:31:12+08:00
+    [INFO] ------------------------------------------------------------------------
+    [0m[0m
+5、自动生成的目录结构：
+    ─maven02-service
+      └─pom.xml
+      │
+      └─src
+          ├─main
+          │  └─java
+          │      └─com
+          │          └─loach
+          │              └─maven02
+          │                  └─service
+          │                          App.java
+          │
+          └─test
+              └─java
+                  └─com
+                      └─loach
+                          └─maven02
+                              └─service
+                                      AppTest.java
+6、pom.xml
+    &lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+      xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+      &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+      &lt;groupId&gt;com.loach.maven02&lt;/groupId&gt;
+      &lt;artifactId&gt;maven02-service&lt;/artifactId&gt;
+      &lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;
+      &lt;packaging&gt;jar&lt;/packaging&gt;
+
+      &lt;name&gt;maven02-service&lt;/name&gt;
+      &lt;url&gt;http://maven.apache.org&lt;/url&gt;
+
+      &lt;properties&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+      &lt;/properties&gt;
+
+      &lt;dependencies&gt;
+        &lt;dependency&gt;
+          &lt;groupId&gt;junit&lt;/groupId&gt;
+          &lt;artifactId&gt;junit&lt;/artifactId&gt;
+          &lt;version&gt;3.8.1&lt;/version&gt;
+          &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+      &lt;/dependencies&gt;
+    &lt;/project&gt;
+7、App.java
+    package com.loach.maven02.service;
+
+    /**
+     * Hello world!
+     *
+     */
+    public class App 
+    {
+        public static void main( String[] args )
+        {
+            System.out.println( &quot;Hello World!&quot; );
+        }
+    }
+9、AppTest.java
+    package com.loach.maven02.service;
+
+    import junit.framework.Test;
+    import junit.framework.TestCase;
+    import junit.framework.TestSuite;
+
+    /**
+     * Unit test for simple App.
+     */
+    public class AppTest 
+        extends TestCase
+    {
+        /**
+         * Create the test case
+         *
+         * @param testName name of the test case
+         */
+        public AppTest( String testName )
+        {
+            super( testName );
+        }
+
+        /**
+         * @return the suite of tests being tested
+         */
+        public static Test suite()
+        {
+            return new TestSuite( AppTest.class );
+        }
+
+        /**
+         * Rigourous Test :-)
+         */
+        public void testApp()
+        {
+            assertTrue( true );
+        }
+    }
+</code></pre><p>实例2：创建项目maven02(自动方式)</p>
+<p>执行命令：mvn archetype:generate -B -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.1 -DgroupId=com.loach.maven02 -DartifactId=maven02-demo -Dversion=1.0-SNAPSHOT -Dpackage=com.loach.maven02.demo</p>
+<pre><code>D:\MavenTest\code\maven02&gt;mvn archetype:generate -B -DarchetypeGroupId=org.apach
+e.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeV
+ersion=1.1 -DgroupId=com.loach.maven02 -DartifactId=maven02-demo -Dversion=1.0-S
+NAPSHOT -Dpackage=com.loach.maven02.demo
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------&lt; org.apache.maven:standalone-pom &gt;-------------------
+[INFO] Building Maven Stub Project (No POM) 1
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO]
+[INFO] &gt;&gt;&gt; maven-archetype-plugin:3.0.1:generate (default-cli) &gt; generate-source
+s @ standalone-pom &gt;&gt;&gt;
+[INFO]
+[INFO] &lt;&lt;&lt; maven-archetype-plugin:3.0.1:generate (default-cli) &lt; generate-source
+s @ standalone-pom &lt;&lt;&lt;
+[INFO]
+[INFO]
+[INFO] --- maven-archetype-plugin:3.0.1:generate (default-cli) @ standalone-pom
+---
+[INFO] Generating project in Batch mode
+[INFO] Archetype repository not defined. Using the one from [org.apache.maven.ar
+chetypes:maven-archetype-quickstart:1.1] found in catalog remote
+[INFO] -------------------------------------------------------------------------
+---
+[INFO] Using following parameters for creating project from Old (1.x) Archetype:
+ maven-archetype-quickstart:1.1
+[INFO] -------------------------------------------------------------------------
+---
+[INFO] Parameter: basedir, Value: D:\MavenTest\code\maven02
+[INFO] Parameter: package, Value: com.loach.maven02.demo
+[INFO] Parameter: groupId, Value: com.loach.maven02
+[INFO] Parameter: artifactId, Value: maven02-demo
+[INFO] Parameter: packageName, Value: com.loach.maven02.demo
+[INFO] Parameter: version, Value: 1.0-SNAPSHOT
+[INFO] project created from Old (1.x) Archetype in dir: D:\MavenTest\code\maven0
+2\maven02-demo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 11.168 s
+[INFO] Finished at: 2018-04-07T13:36:24+08:00
+[INFO] ------------------------------------------------------------------------
+[0m[0m
+</code></pre><p>创建完成后，项目结构如下：</p>
+<pre><code>─maven02-demo
+      └─pom.xml
+      │
+      └─src
+        ├─main
+        │  └─java
+        │      └─com
+        │          └─loach
+        │              └─maven02
+        │                  └─demo
+        │                          App.java
+        │
+        └─test
+            └─java
+                └─com
+                    └─loach
+                        └─maven02
+                            └─demo
+                                    AppTest.java
+</code></pre><p>###15、maven中的基本知识概念<br>    1、坐标<br>        一般由groupId、artifactId、version三部分构成：<br>        <groupid>com.loach.maven02</groupid>—- 由公司名com.loach+项目名maven02构成<br>          <artifactid>maven02-demo</artifactid>—-由项目名maven02-模块名demo<br>          <version>1.0-SNAPSHOT</version>———-指定项目版本<br>    2、仓库<br>        1）管理项目依赖，分为本地仓库和远程仓库；<br>        2）maven的全球中央仓库：<a href="https://repo.maven.apache.org/maven2" target="_blank" rel="noopener">https://repo.maven.apache.org/maven2</a><br>        3）镜像仓库，在maven的conf/settings.xml中配置：<br>           <mirrors><br>              <mirror><br>              <id>nexus</id><br>              <mirrorof>*</mirrorof><br>              <url><a href="http://192.168.129.115:8081/repository/tydic-public-repositories/" target="_blank" rel="noopener">http://192.168.129.115:8081/repository/tydic-public-repositories/</a></url><br>            </mirror><br>            <!-- mirror
+             | Specifies a repository mirror site to use instead of a given repository. The repository that
+             | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
+             | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
+             |
+            <mirror>
+              <id>mirrorId</id>
+              <mirrorOf>repositoryId</mirrorOf>
+              <name>Human Readable Name for this Mirror.</name>
+              <url>http://my.repository.com/repo/path</url>
+            </mirror>
+             --><br>          </mirrors><br>        4）更改仓库位置,在maven的conf/settings.xml中配置：<br>        <localrepository>D:\Tools\repository</localrepository></p>
+<p>###16、完整的项目构建过程：</p>
+<pre><code>清理、编译、测试、打包、集成测试、验证、部署
+clean、compile、test、package、install
+</code></pre><p>###17、maven项目中安装插件<br>项目的pom.xml文件中通过如下标签实例实现：</p>
+<pre><code> &lt;build&gt;
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+            &lt;configuration&gt;
+                &lt;!--spring boot打包的话需要指定一个唯一的入口--&gt;
+                &lt;!-- 指定该Main Class为全局的唯一入口 --&gt;
+                &lt;mainClass&gt;com.tydic.dim.DimApiApplication&lt;/mainClass&gt;
+                &lt;layout&gt;ZIP&lt;/layout&gt;
+                &lt;!-- 打包的时候把本地引入的jar一同打包到jar中 --&gt;
+                &lt;includeSystemScope&gt;true&lt;/includeSystemScope&gt;
+            &lt;/configuration&gt;
+            &lt;executions&gt;
+                &lt;execution&gt;
+                    &lt;goals&gt;
+                        &lt;goal&gt;repackage&lt;/goal&gt;&lt;!--可以把依赖的包都打包到生成的Jar包中--&gt;
+                    &lt;/goals&gt;
+                &lt;/execution&gt;
+            &lt;/executions&gt;
+        &lt;/plugin&gt;
+
+        &lt;!-- maven编译插件，显示的指定编译器的位置，解决&quot;无效的目标发行版: 1.8&quot;问题 --&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+            &lt;version&gt;3.1&lt;/version&gt;
+            &lt;configuration&gt;
+                &lt;source&gt;1.8&lt;/source&gt;
+                &lt;target&gt;1.8&lt;/target&gt;
+            &lt;/configuration&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;
+</code></pre><p>###18、pom.xml<br>该文件是maven项目的核心管理文件，是用于组织项目，管理项目依赖，构建项目的核心文件；<br>pom.xml常用元素，project为pom.xml文件的根标签元素；其中包含的子元素有：</p>
+<pre><code>1）modelVersion：声明该POM符合的项目描述符的版本（4.0.0）
+2）parent：如果有父项目，则为父项目的位置，其中的标签值需要给定a group ID, artifact ID and version，例如：
+    &lt;parent&gt;
+        &lt;groupId&gt;com.tydic.dim&lt;/groupId&gt;
+        &lt;artifactId&gt;dim-back&lt;/artifactId&gt;
+        &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+    &lt;/parent&gt;
+3）groupId：指定一个项目的唯一标识符；通常使用全限定包名（com.loach）
+4）artifactId:通常使用项目名-模块名；
+5) version:指定项目的版本信息
+    例如0.0.0SNAPSHOT
+    第一个0：表示大版本号；
+    第二个0：表示分支版本号；
+    第三个0：表示小版本号；
+    snapshot：快照版本；
+    alpha：内部测试版本；
+    beta:公测版本；
+    release:稳定版本；
+    GA：正式发布版本；
+6）packaging：项目打包形式，默认是jar，可以设置为jar、war、ear、pom
+7）name：项目的全名称
+8）description：对项目的详细描述
+9）url：项目的主页URL地址，
+10）inceptionYear：指定项目的开始年份，指定4位数字，通常在生成版权声明信息时使用；
+11）organization：该元素描述项目所属组织的多种属性，这些属性通常在创建包含版权信息的文档时使用；
+    例如：
+    &lt;organization&gt;
+        &lt;name&gt;xxx&lt;/name&gt;
+        &lt;url&gt;xxx&lt;/url&gt;
+    &lt;/organization&gt;
+12) licenses:该元素描述项目的所有许可信息；
+    例如：
+    &lt;licenses&gt;
+        &lt;license&gt;
+            &lt;name&gt;&lt;/name&gt;
+            &lt;url&gt;&lt;/url&gt;
+            &lt;distribution&gt;&lt;/distribution&gt;
+            &lt;comments&gt;&lt;/comments&gt;
+        &lt;/license&gt;
+    &lt;/licenses&gt;
+13)developers:描述项目的所有开发者
+</code></pre>
       
 
       
